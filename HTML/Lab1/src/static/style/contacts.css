@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: beige;
+    color: red;
+}
+
+hr {
+    border: red solid 3px;
+}
+
+.backIcon {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.header {
+    color: black;
+    text-align: center;
+}
+
+.profiles {
+    padding: 0 100px 0 100px;
+}
+
+.profiles img {
+    height: 60px;
+}
+
+.profiles a {
+    text-decoration: none;
+}
+
+.profiles a:hover {
+    color: black;
+}
+
+.profile {
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+}

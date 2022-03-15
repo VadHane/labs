@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: beige;
+    color: red;
+}
+
+hr {
+    border: red solid 3px;
+}
+
+.mainImages {
+    height: 300px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.mainImages img {
+    border-radius: 200px;
+    height: 100%;
+    display: block;
+}
+
+.fullName {
+    color: black;
+    text-align: center;
+}
+
+.autobiography {
+    margin-top: 20px;
+    padding: 10px 10px 10px 10px;
+}
+
+.hyperlinks {
+    padding: 10px 0px 10px 0px;
+}
+
+.hyperlinks li {
+    padding-top: 5px;
+}
+
+.footer {
+    padding-top: 20px;
+}
