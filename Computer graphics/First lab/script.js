@@ -60,7 +60,7 @@ class Frame {
 
     // рухати перший полігон до другого 
     async move() {
-
+        await new Promise(resolve => setTimeout(resolve, 5000));
         while (!this.#check(this.polygon1, this.polygon2) && !this.#check(this.polygon2, this.polygon1)) {
             this.#clear();
             this.#updatePoints();

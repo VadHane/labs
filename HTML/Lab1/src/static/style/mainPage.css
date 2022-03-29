@@ -8,7 +8,6 @@ body {
 hr {
     border: red solid 3px;
     border-radius: 3px;
-    margin: 0 30px 0 30px;
 }
 
 .mainImages {
@@ -32,8 +31,9 @@ hr {
 }
 
 .autobiography {
+    text-align: justify;
     margin-top: 20px;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 0px 10px 0px;
 }
 
 .hyperlinks {
@@ -45,6 +45,10 @@ hr {
 }
 
 .footer {
-    padding-right: 10px;
     padding-top: 20px;
+}
+
+.autobiography, .hyperlinks, .footer, hr {
+
+    margin: 0 50px 0 50px;
 }
