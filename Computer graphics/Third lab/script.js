@@ -8,7 +8,7 @@ class Circle{
 
     updateCenter(start, t){
         this.center.x = start.x + 20 * t;
-        this.center.y = start.y + 20 * t;
+        this.center.y = start.y +  2 * (t * t);
     }
 
     show(stage){
@@ -57,21 +57,24 @@ class Frame{
     async move(startPos){
         this.circle = new Circle({...startPos}, 40);
         this.point = new Point(40, "red");
-        for (let t = 0; t < 6 * Math.PI; t += 0.01){
+        for (let t = 0; t < 4 * Math.PI; t += 0.01){
             this.#clear();
             this.#show();
             this.circle.updateCenter(startPos, t);
             this.point.updatePoint(this.circle.center, t);
 
 
-            let p = new Point(40, "blue");
+            let p = new Point(40, "black");
             p.updatePoint(this.circle.center, t);
             p.show(this.stage);
 
 
+            this.stage.circle(this.circle.center.x, this.circle.center.y, 1)
+
             // sleep
-            await new Promise(resolve => setTimeout(resolve, 20));
+            await new Promise(resolve => setTimeout(resolve, 5));
         }
+        this.#clear();
     }
 }
 
