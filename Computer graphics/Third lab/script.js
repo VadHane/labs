@@ -7,8 +7,8 @@ class Circle{
     }
 
     updateCenter(start, t){
-        this.center.x = start.x + 4 * t;
-        this.center.y = start.y + 4 * t;
+        this.center.x = start.x + 20 * t;
+        this.center.y = start.y + 20 * t;
     }
 
     show(stage){
@@ -19,19 +19,21 @@ class Circle{
 
 
 class Point{
-    constructor(radius) {
+    constructor(radius, color) {
         this.r = radius;
+        this.color = color;
         this.x = this.r * Math.cos(0);
         this.y = this.r * Math.sin(0);
     }
 
-    updatePoint(t){
-        this.x = this.r * Math.cos(4 * t);
-        this.y = this.r * Math.sin(4 * t);
+    updatePoint(center, t){
+        this.x = center.x + this.r * Math.cos(4 * t);
+        this.y = center.y + this.r * Math.sin(4 * t);
     }
 
     show(stage){
-        stage.circle(this.x, this.y, 1);
+        stage.circle(this.x, this.y, 1)
+            .stroke(this.color);
     }
 }
 
@@ -54,17 +56,23 @@ class Frame{
 
     async move(startPos){
         this.circle = new Circle({...startPos}, 40);
-        this.point = new Point(40);
-        for (let t = 0; t < 6 * Math.PI; t += 0.2){
+        this.point = new Point(40, "red");
+        for (let t = 0; t < 6 * Math.PI; t += 0.01){
             this.#clear();
             this.#show();
             this.circle.updateCenter(startPos, t);
-            this.point.updatePoint(t);
+            this.point.updatePoint(this.circle.center, t);
+
+
+            let p = new Point(40, "blue");
+            p.updatePoint(this.circle.center, t);
+            p.show(this.stage);
+
 
             // sleep
-            await new Promise(resolve => setTimeout(resolve, 40));
+            await new Promise(resolve => setTimeout(resolve, 20));
         }
     }
 }
 
-new Frame().move({x:300, y:300});
+new Frame().move({x:200, y:200});
