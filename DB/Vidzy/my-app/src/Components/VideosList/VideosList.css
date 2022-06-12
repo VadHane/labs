@@ -1,0 +1,70 @@
+table {
+    margin: 0 auto;
+    width: 90vw;
+    border: 1px solid black;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: rgb(65, 65, 65);
+}
+
+th {
+    height: 50px;
+}
+
+td {
+    height: 40px;
+}
+
+th,
+td {
+    border: 1px solid black;
+}
+
+.scroll-list {
+    height: 320px;
+    overflow-x: auto;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.table-col-title {
+    width: 15vw;
+}
+
+.table-col-desc {
+    width: 40vw;
+}
+
+.table-col-genre {
+    width: 15vw;
+}
+
+.header {
+    height: 60px;
+    padding: 5px;
+}
+
+.header button {
+    width: 100px;
+    height: 25px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 15px;
+    margin-left: 150px;
+}
+
+.header button:hover {
+    cursor: pointer;
+}
+
+.table-col-action img {
+    height: 20px;
+    padding: 0 10px;
+}
